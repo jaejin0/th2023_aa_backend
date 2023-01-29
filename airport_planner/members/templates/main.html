@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello World!</h1>
+<p>Welcome to my first Django project!</p>
+
+
+<form action="/action_page.php">
+    <label for="date">Date: </label>
+    <input type="text" id="date" name="date"><br>
+    <label for="flightNumber">Flight Number: </label>
+    <input type="text" id="flightNumber" name="flightNumber"><br>
+    <input type="submit" href="members/<str:date>/<int:flightNumber>">SUBMIT</input>
+</form>
+
+
+
+
+
+</body>
+</html>
