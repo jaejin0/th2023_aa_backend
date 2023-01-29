@@ -1,6 +1,7 @@
 from django.template import loader
 from django.http import HttpResponse
 from .models import Member
+import json
 # Create your views here.
 
 def main(request):
@@ -16,6 +17,10 @@ def members(request, date, flightNumber):
     
     template = loader.get_template('flights.html')
     context = {
-        'targetMember' : targetMember
+        'flightNumber' : targetMember.flightNumber,
+        'date' : targetMember.date,
+        'checkInTime' : targetMember.checkInTime,
+        'tsa' : targetMember.tsa,
+        'walkingTime' : targetMember.walkingTime
     }
-    return HttpResponse(template.render(context, request))
+    return context
